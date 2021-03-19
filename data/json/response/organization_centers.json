@@ -1,0 +1,730 @@
+{
+    "orgCenters": [
+      {
+        "name": "ABLE-TPY",
+        "code": "ABLE_TPY",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "AG-Ghim Moh",
+        "code": "AG_Ghim_Moh",
+        "settingClassification": "AAH",
+        "canWrite": true
+      },
+      {
+        "name": "AG-Telok Blangah",
+        "code": "AG_Telok_Blangah",
+        "settingClassification": "AAH",
+        "canWrite": true
+      },
+      {
+        "name": "AH-Inpatient",
+        "code": "AH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "AH-Outpatient",
+        "code": "AH_Outpatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "AMK CH-DRC",
+        "code": "AMK_CH_DRC",
+        "settingClassification": "DRC",
+        "canWrite": false
+      },
+      {
+        "name": "AMK CH-Inpatient",
+        "code": "AMK_CH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "AWWA-AMK",
+        "code": "AWWA_AMK",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "CGH-Inpatient",
+        "code": "CGH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "CGH-Oupatient",
+        "code": "CGH_Oupatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "HWA-Whampoa",
+        "code": "HWA_Whampoa",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "JCH-DRC",
+        "code": "JCH_DRC",
+        "settingClassification": "DRC",
+        "canWrite": false
+      },
+      {
+        "name": "JCH-Inpatient",
+        "code": "JCH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "KTPH-Home Therapy",
+        "code": "KTPH_Home_Therapy",
+        "settingClassification": "HHSHT",
+        "canWrite": false
+      },
+      {
+        "name": "KTPH-Inpatient",
+        "code": "KTPH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "KTPH-Outpatient",
+        "code": "KTPH_Outpatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "KWSC-Jalan Besar",
+        "code": "KWSC_Jalan_Besar",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "KWSC-McNair",
+        "code": "KWSC_McNair",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "KWSC-St George",
+        "code": "KWSC_St_George",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "KWSH-SCC",
+        "code": "KWSH_SCC",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NHGP-AMK",
+        "code": "NHGP_AMK",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-GEY",
+        "code": "NHGP_GEY",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-KAL",
+        "code": "NHGP_KAL",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-SEM",
+        "code": "NHGP_SEM",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-TPY",
+        "code": "NHGP_TPY",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-WDL",
+        "code": "NHGP_WDL",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NHGP-YIS",
+        "code": "NHGP_YIS",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NTFGH-Inpatient",
+        "code": "NTFGH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "NTFGH-Outpatient",
+        "code": "NTFGH_Outpatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "NTUC-Admiralty",
+        "code": "NTUC_Admiralty",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-BBK-West",
+        "code": "NTUC_BBK_West",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Bedok",
+        "code": "NTUC_Bedok",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Boon lay",
+        "code": "NTUC_Boon_Lay",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Chai Chee",
+        "code": "NTUC_Chai_Chee",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-CI Yuan",
+        "code": "NTUC_CI_Yuan",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Fengshan",
+        "code": "NTUC_Fengshan",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Geylang East",
+        "code": "NTUC_Geylang_East",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Geylang Serai",
+        "code": "NTUC_Geylang_Serai",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Henderson",
+        "code": "NTUC_Henderson",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Home Care",
+        "code": "NTUC_Home_Care",
+        "settingClassification": "HHSHT",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Jurong Ctrl",
+        "code": "NTUC_Jurong_Ctrl",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Jurong West",
+        "code": "NTUC_Jurong_West",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Radin Mas",
+        "code": "NTUC_Radin_Mas",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-Serangoon Ctrl",
+        "code": "NTUC_Serangoon_Ctrl",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NTUC-TPY",
+        "code": "NTUC_TPY",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "NUH-Inpatient",
+        "code": "NUH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "NUH-Outpatient",
+        "code": "NUH_Outpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-BBK",
+        "code": "NUP_BBK",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-BukitPanjang",
+        "code": "NUP_BukitPanjang",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-CCK",
+        "code": "NUP_CCK",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-Clementi",
+        "code": "NUP_Clementi",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-Jurong",
+        "code": "NUP_Jurong",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "NUP-Pioneer",
+        "code": "NUP_Pioneer",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "OCH-Inpatient",
+        "code": "OCH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "OneRehab-CSP-Center",
+        "code": "OneRehab_CSP_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "OneRehab-PHI-Center",
+        "code": "OneRehab_PHI_Center",
+        "settingClassification": "AHI",
+        "canWrite": true
+      },
+      {
+        "name": "Ren Ci CH-Inpatient",
+        "code": "Ren_Ci_CH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "S3-Enabling Village",
+        "code": "S3_Enabling_Village",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "S3-Jurong Point",
+        "code": "S3_Jurong_Point",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "SACH-DRC",
+        "code": "SACH_DRC",
+        "settingClassification": "DRC",
+        "canWrite": false
+      },
+      {
+        "name": "SACH-Inpatient",
+        "code": "SACH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "SASC-Bedok North",
+        "code": "SASC_Bedok_North",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Bedok South",
+        "code": "SASC_Bedok_South",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Henderson",
+        "code": "SASC_Henderson",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Hillview2",
+        "code": "SASC_Hillview2",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Joy Connect",
+        "code": "SASC_Joy_Connect",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Queenstown",
+        "code": "SASC_Queenstown",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Tampines",
+        "code": "SASC_Tampines",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SASC-Tampines North",
+        "code": "SASC_Tampines_North",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SATA-Bedok",
+        "code": "SATA_Bedok",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "SATA-Woodlands",
+        "code": "SATA_Woodlands",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "SGH-Inpatient",
+        "code": "SGH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "SGH-Oupatient",
+        "code": "SGH_Oupatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "SHP-Bedok",
+        "code": "SHP_Bedok",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "SHP-Bukit Merah",
+        "code": "SHP_Bukit_Merah",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "SHP-Eunos",
+        "code": "SHP_Eunos",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "SHP-Punggol",
+        "code": "SHP_Punggol",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "SHP-Tampines",
+        "code": "SHP_Tampines",
+        "settingClassification": "PC",
+        "canWrite": false
+      },
+      {
+        "name": "SKCH-Inpatient",
+        "code": "SKCH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "SKH-Inpatient",
+        "code": "SKH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "SKH-Outpatient",
+        "code": "SKH_Outpatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "SLEC-AMK",
+        "code": "SLEC_Ang_Mo_Kio_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-AMK Poly",
+        "code": "SLEC_Ang_Mo_Kio_Poly_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Ayer Rajah",
+        "code": "SLEC_Ayer_Rajah_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-BBK",
+        "code": "SLEC_Bukit_Batok_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Bukit Timah",
+        "code": "SLEC_Bukit_Timah_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Changkat",
+        "code": "SLEC_ChangKat_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Chong Pang",
+        "code": "SLEC_Chong_Pang_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Clementi",
+        "code": "SLEC_Clementi_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Golden Years",
+        "code": "SLEC_Golden_Years_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Home Therapy",
+        "code": "SLEC_Home_Therapy_Center",
+        "settingClassification": "HHSHT",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Hougang",
+        "code": "SLEC_Hougang_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Hougang Meadow",
+        "code": "SLEC_Hougang_Meadow_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Jurong East",
+        "code": "SLEC_Jurong_East_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Keat Hong",
+        "code": "SLEC_Keat_Hong_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Kebun Baru",
+        "code": "SLEC_Kebun_Baru_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Marine Parade",
+        "code": "SLEC_Marine_Parade_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Nee Soon Ctrl",
+        "code": "SLEC_Nee_Soon_Central_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Nee Soon East",
+        "code": "SLEC_Nee_Soon_East_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Residence AMK",
+        "code": "SLEC_St_Lukes_Residence_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Residence AMK",
+        "code": "SLEC_St_Luke's_Residence_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Rivervale",
+        "code": "SLEC_Rivervale_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Serangoon",
+        "code": "SLEC_Serangoon_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Sumang",
+        "code": "SLEC_Sumang",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Tampines",
+        "code": "SLEC_Tampines_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Telok Blangah",
+        "code": "SLEC_Telok_Blangah_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SLEC-Whampoa",
+        "code": "SLEC_Whampoa_Center",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "SPD-HQ (Peng Nguan)",
+        "code": "SPD_HQ_Peng_Nguan",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "SPD-TPY",
+        "code": "SPD_TPY",
+        "settingClassification": "DRC",
+        "canWrite": true
+      },
+      {
+        "name": "St Hilda's special-DRC",
+        "code": "St_Hildas_special_DRC",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "St Luke CH-DRC",
+        "code": "St_Luke_CH_DRC",
+        "settingClassification": "DRC",
+        "canWrite": false
+      },
+      {
+        "name": "St Luke CH-Inpatient",
+        "code": "St_Luke_CH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "Sunlove SCC-AMK",
+        "code": "Sunlove_SCC_AMK",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "TEST NURSING HOME Center",
+        "code": "TEST_NURSING_HOME_Center",
+        "settingClassification": "NH",
+        "canWrite": true
+      },
+      {
+        "name": "TTSH-Inpatient",
+        "code": "TTSH_Inpatient",
+        "settingClassification": "AHI",
+        "canWrite": false
+      },
+      {
+        "name": "TTSH-Outpatient",
+        "code": "TTSH_Outpatient",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      },
+      {
+        "name": "Vanguard-Senja",
+        "code": "Vanguard_Senja",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "Vanguard-Woodlands",
+        "code": "Vanguard_Woodlands",
+        "settingClassification": "SCC",
+        "canWrite": true
+      },
+      {
+        "name": "YCH-DRC",
+        "code": "YCH_DRC",
+        "settingClassification": "DRC",
+        "canWrite": false
+      },
+      {
+        "name": "YCH-Inpatient",
+        "code": "YCH_Inpatient",
+        "settingClassification": "CHI",
+        "canWrite": false
+      },
+      {
+        "name": "YH-AdMC",
+        "code": "YH_AdMC",
+        "settingClassification": "AHAHP",
+        "canWrite": false
+      }
+    ]
+  }

@@ -1,0 +1,17 @@
+{
+    "organization": "OneRehab_CSP_Center",
+    "status": "Discharged",
+    "page": 1,
+    "pageSize": 20,
+    "filterBy": {
+        "condition": "Or",
+        "criterias": [],
+        "filterType": "Composite"
+    },
+    "sortBy": [
+        {
+            "field": "FullName",
+            "direction": "Asc"
+        }
+    ]
+}
