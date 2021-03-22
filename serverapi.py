@@ -28,7 +28,6 @@ class ServerApi:
 
     def get_with_bearer_token(self, payload=None):
         api_url = self.api_url
-        print(payload)
         headers = {
            "Content-Type": "application/json",
             "Accept": "*/*",

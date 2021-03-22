@@ -4,6 +4,9 @@ from requests import Response
 # from json import JSONDecodeError
 from jsonschema import validate, SchemaError, ValidationError
 import json
+from serverapi import ServerApi
+import data.login_uat as login
+import data.url_extension as url_ext
 
 def get_details_after_login(email=None, domain=None, subdomain=None):
     if email=="admincsp" and domain=="healthgrp" and subdomain==None:
@@ -12,13 +15,56 @@ def get_details_after_login(email=None, domain=None, subdomain=None):
                     "subOrgResponseName": "OneRehab CSP",
                     "subOrgResponseCode": "OneRehab_CSP",
                     "orgCenterResponseName": "OneRehab-CSP-Center",
-                    "orgCenterResponseCode": "OneRehab-CSP-Center"
+                    "orgCenterResponseCode": "OneRehab_CSP_Center"
                 }
 
 def read_json_file(file_name):
     with open(file_name) as f:
         data = json.load(f)
     return data
+
+def get_all_active_list(total_page=None):
+    login.ACTIVE_LIST_ITEMS = []
+    details = get_details_after_login(login.EMAIL,login.DOMAIN)
+    for i in range(total_page):
+        API_URL = "{}/{}".format(login.API_URL,url_ext.LIST)
+        client = ServerApi(api_url=API_URL)
+        request_json = read_json_file("data/json/request/active_list.json")
+        request_json['organization'] = details['orgCenterResponseCode']
+        request_json['page'] = i+1
+
+        response = client.post_with_bearer_token(request_json)
+
+        for item in response.json()['items']:
+            login.ACTIVE_LIST_ITEMS.append(item)
+
+    return login.ACTIVE_LIST_ITEMS
+
+def get_all_discharged_list(total_page=None):
+    login.DISCHARGED_LIST_ITEMS = []
+    details = get_details_after_login(login.EMAIL,login.DOMAIN)
+    for i in range(total_page):
+        API_URL = "{}/{}".format(login.API_URL,url_ext.LIST)
+        client = ServerApi(api_url=API_URL)
+        request_json = read_json_file("data/json/request/discharged_list.json")
+        request_json['organization'] = details['orgCenterResponseCode']
+        request_json['page'] = i+1
+
+        response = client.post_with_bearer_token(request_json)
+
+        for item in response.json()['items']:
+            login.DISCHARGED_LIST_ITEMS.append(item)
+
+    return login.DISCHARGED_LIST_ITEMS
+
+# def update_discharged_list(total_records=None, current_page_number=None, \
+#                         total_page=None, items=[]):
+#     local.DISCHARGED_LIST_TOTAL_RECORDS = total_records
+#     local.DISCHARGED_LIST_TOTAL_PAGE = total_page
+#     local.DISCHARGED_LIST_ITEMS = items
+
+#     return local.DISCHARGED_LIST_ITEMS
+
 
 
 # def text_to_json(text):
