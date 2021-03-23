@@ -17,4 +17,3 @@ echo "Test starts at $(date)"
 pytest -v --disable-warnings --tb=short -s
 
 
-

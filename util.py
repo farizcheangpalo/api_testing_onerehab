@@ -7,6 +7,95 @@ import json
 from serverapi import ServerApi
 import data.login_uat as login
 import data.url_extension as url_ext
+import datetime
+
+def print_pass_message(text=''):
+    return print("\033[1;32;40m"+text)
+
+def print_fail_message(text=''):
+    return print("\033[1;31;40m"+text)
+
+def r_lum():
+    num = str(int(random.random()*10))
+    if num == "":
+        return 0
+    else:
+        return int(num)
+
+def generate_nric(list_items=[]):
+    str_digit = ""
+    random_num = 0
+    first_letter = random.choice('STGF')
+    if first_letter == 'S' or first_letter == 'T':
+        last_letter = ['J','Z','I','H','G','F','E','D','C','B','A']
+    else:
+        last_letter = ['X','W','U','T','R','Q','P','N','M','L','K']
+    if first_letter == 'T' or first_letter == 'G':   
+        random_num = 4
+    else:
+        random_num = 0
+    for i in [2,7,6,5,4,3,2]:
+        digit = r_lum()
+        random_num = random_num + i * digit
+        str_digit = str_digit + str(digit)
+    last_letter = last_letter[random_num%11]
+    nric = first_letter + str_digit + last_letter
+
+def generate_dob(age=50):
+    today = datetime.date.today()
+    month = datetime.date.today().month
+    day = datetime.date.today().day
+    if str(month)=="2" and str(day)=="29":
+        year = str(today).split("-")[0]
+        birth_year = str(int(year) - age)
+        dob = str(today).replace(year,birth_year)
+        dob = str(today)[:8] + "28"
+        return dob
+    else:
+        year = str(today).split("-")[0]
+        birth_year = str(int(year) - age)
+        dob = str(today).replace(year,birth_year)
+        return dob
+
+
+def sort_field_by(list={},field='',is_asc=True,page_size=20):
+    arr = []
+    for item in list:
+        arr.append(item[field])
+    
+    if not field == 'fullName':
+        if is_asc:
+            arr.sort(reverse=False)
+        else:
+            arr.sort(reverse=True)
+        return arr[:page_size]
+    else:
+        if not is_asc:
+            arr.reverse()
+        return arr[:page_size]
+
+def store_response_sort_by(list={},field=''):
+    arr = []
+    for item in list:
+        arr.append(item[field])
+    return arr
+
+def assert_sort_by(list={}, type='active', sort_by='', is_asc=True, field=''):
+    API_URL = "{}/{}".format(login.API_URL,url_ext.LIST)
+    client = ServerApi(api_url=API_URL)
+    request_json = read_json_file("data/json/request/{}_list.json".format(type))
+
+    details = get_details_after_login(login.EMAIL,login.DOMAIN)
+    request_json['organization'] = details['orgCenterResponseCode']
+    request_json['sortBy'] = [sort_by]
+    response = client.post_with_bearer_token(request_json)
+    
+    assert response.status_code == 200
+
+    fullname_arr = store_response_sort_by(response.json()["items"],field=field)
+    expected_arr = sort_field_by(list=list,field=field,is_asc=is_asc,page_size=request_json['pageSize'])
+    
+    assert fullname_arr == expected_arr
 
 def get_details_after_login(email=None, domain=None, subdomain=None):
     if email=="admincsp" and domain=="healthgrp" and subdomain==None:

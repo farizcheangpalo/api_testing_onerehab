@@ -41,7 +41,14 @@ DISCHARGED_LIST_CURRENT_PAGE_NUMBER = None
 global DISCHARGED_LIST_ITEMS
 DISCHARGED_LIST_ITEMS = []
 
-
+SORT_BY = {
+    "fullname_asc": {"field": "FullName", "direction": "Asc"},
+    "fullname_desc": {"field": "FullName", "direction": "Desc"},
+    "dateofbirth_asc": {"field": "DateofBirth", "direction": "Asc"},
+    "dateofbirth_desc": {"field": "DateofBirth", "direction": "Desc"},
+    "nric_asc": {"field": "Nric", "direction": "Asc"},
+    "nric_desc": {"field": "Nric", "direction": "Desc"}
+}
 # ASSIGNEE = "abc@noDomain.com"
 # REPORTER = "xyz@nodomain.com"
 # DESCRIPTION = "Please go through the API documentation and write the integration test for the APIs. Try to cover all possible scenarios.",

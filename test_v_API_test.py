@@ -5,6 +5,6 @@ import data.login_uat as login
 import data.url_extension as url_ext
 import util
 
-def test_post():
-    print(login.ACCESS_TOKEN)
+# def test_post():
+#     print(login.ACCESS_TOKEN)
     

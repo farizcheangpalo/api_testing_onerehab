@@ -62,7 +62,7 @@ def test_post_active_list():
     assert response.json()['currentPageNumber'] >= 0
     assert response.json()['totalPage'] >= 0
 
-    print(util.get_all_active_list(response.json()['totalPage']))
+    util.get_all_active_list(response.json()['totalPage'])
 
 # verify that discharged list is correct
 def test_post_discharged_list():
@@ -79,7 +79,4 @@ def test_post_discharged_list():
     assert response.json()['currentPageNumber'] >= 0
     assert response.json()['totalPage'] >= 0
 
-    print(util.get_all_discharged_list(response.json()['totalPage']))
-    
-
-    
+    util.get_all_discharged_list(response.json()['totalPage'])
