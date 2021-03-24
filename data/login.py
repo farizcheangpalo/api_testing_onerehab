@@ -1,5 +1,6 @@
 # UAT base url
 API_URL = 'https://onerehab-uat.iconnect.care'
+# API_URL = 'http://localhost:3000/onerehab/'
 
 # email/username
 EMAIL = "admincsp"
@@ -9,6 +10,9 @@ EMAILVERIFIER = "gxdruSmnF/qOhXE3juYxArA0vgVGZynWwWVLx9cPIJ69z82ybtOK6vNt+LQqDt7
 
 # domain
 DOMAIN = "healthgrp"
+
+# # subdomain
+# SUBDOMAIN = "SINGHEALTH"
 
 # global access token
 # this will be stored after the login and shared throughout the files
@@ -49,6 +53,10 @@ SORT_BY = {
     "nric_asc": {"field": "Nric", "direction": "Asc"},
     "nric_desc": {"field": "Nric", "direction": "Desc"}
 }
+
+global TRACE_ID
+TRACE_ID = ""
+
 # ASSIGNEE = "abc@noDomain.com"
 # REPORTER = "xyz@nodomain.com"
 # DESCRIPTION = "Please go through the API documentation and write the integration test for the APIs. Try to cover all possible scenarios.",

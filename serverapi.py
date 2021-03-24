@@ -1,5 +1,5 @@
 import requests
-import data.login_uat as login
+import data.login as login
 
 class ServerApi:
     def __init__(self, api_url):
