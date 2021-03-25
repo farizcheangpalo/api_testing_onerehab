@@ -14,6 +14,7 @@ pip install --upgrade -r requirements.txt
 
 # run test
 echo "Test starts at $(date)"
-pytest -v --disable-warnings --tb=short -s
+# pytest -v --disable-warnings --tb=short -s
+pytest test_valid_v_API_create_section_3_*.py -v --disable-warnings --tb=short -s
 
 

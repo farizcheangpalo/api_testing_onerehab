@@ -61,10 +61,11 @@ def test_post_create_section_2():
     assert response_caresetting_create['status'] == response_episode_listing_2['episodes'][0]['careSettings'][0]['status']
     assert response_caresetting_create['dateOfAdmission'] == response_episode_listing_2['episodes'][0]['careSettings'][0]['dateOfAdmission']
     assert response_caresetting_create['settingClassification'] == response_episode_listing_2['episodes'][0]['careSettings'][0]['settingClassification']
+    assert response_caresetting_create['sftpCreated'] == False
     # assert response_caresetting_create['relevantMedicalHistory'] == 
     # assert response_caresetting_create['caregiverStatusOnAdmission'] == 
     # assert response_caresetting_create['relationshipOfPrimaryCaregiver'] == 
-    # assert response_caresetting_create['sftpCreated'] == 
+    
     
 
 

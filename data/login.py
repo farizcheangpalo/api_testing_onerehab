@@ -6,7 +6,7 @@ API_URL = 'https://onerehab-uat.iconnect.care'
 EMAIL = "admincsp"
 
 # email verifier (might need to update from time to time)
-EMAILVERIFIER = "gxdruSmnF/qOhXE3juYxArA0vgVGZynWwWVLx9cPIJ69z82ybtOK6vNt+LQqDt7DDdXNxwi4DgVM/OQwf6Tdd4WMv2lQN2WZMzdNuB+KVhW3Oh2h53cORQgq6Ki7GXH+hd96E8Ry9APERA0T28HrbyIJNcQNMEyVAFwjEPmoqOhvSyOnqFuPI9i+OvtmCghZp4AiWSEXud4NRaURWvbpZnuFS3KSkdRv38bR37fzRHwk+EMVFtDcKXzrgNLAIx92igg17YloczUPykMKlJjXoJubFTlVgeEPv0oZprrvc4eo4CQNypqOWV8fWZfDDmcD2VBtIsneFBA1LMyUIxwKKw=="
+EMAILVERIFIER = "obO9lb2TImMPf5UNye+KKVk8XNp7aMHuMXi3FNGabfnAwMSAw4WuZ790Uh/Cv65Qgde/Gl3abjT8+/xEC0XAe3Rmy5AYRGep3ibdj5B9kSGHRUoJrjmpq+b8Wh67u6vragjU6DhLwyHzIgggZvbNn12+WCtJfPwD71rFBonxQNXsbi2aDS4o2Lyy5Qjwzd+WhjFnSCV11NqG5iCmIQgRBDb2eb1LmJp5Z6BQB2FX9QoRQqQb5yIb1Bw3JFfNE+i9+GNXZzqSmuC5CkEn7DMldGiyh8uDvx3+MJNyqNvdJjrBdn4MXIAccTvQ6qufXKi6vK5vgUjjH3WrlA/5bJCINA=="
 
 # domain
 DOMAIN = "healthgrp"

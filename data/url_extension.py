@@ -23,3 +23,19 @@ LISTING = "_onerehab-api/_api/Patient/episodes/listing"
 CARESETTING_ACTIVE = "_onerehab-api/_api/Patient/caresetting/active"
 
 CARESETTING_CREATE = "_onerehab-api/_api/Patient/caresetting/create"
+
+COREOUTCOME = "_onerehab-api/_api/Assessment/assessment/coreoutcome"
+
+ASSESSMENT = "_onerehab-api/_api/Assessment/assessment"
+
+EQ5D_DRAFT = "_onerehab-api/_api/Assessment/eq5d/draft"
+
+EQ5D_CREATE = "_onerehab-api/_api/Assessment/eq5d/create"
+
+FIM_DRAFT = "_onerehab-api/_api/Assessment/fim/draft"
+
+FIM_CREATE = "_onerehab-api/_api/Assessment/fim/create"
+
+STROKE_DRAFT = "_onerehab-api/_api/Assessment/stroke/draft"
+
+STROKE_CREATE = "_onerehab-api/_api/Assessment/stroke/create"
