@@ -36,6 +36,10 @@ FIM_DRAFT = "_onerehab-api/_api/Assessment/fim/draft"
 
 FIM_CREATE = "_onerehab-api/_api/Assessment/fim/create"
 
+MBI_DRAFT = "_onerehab-api/_api/Assessment/mbi/draft"
+
+MBI_CREATE = "_onerehab-api/_api/Assessment/mbi/create"
+
 STROKE_DRAFT = "_onerehab-api/_api/Assessment/stroke/draft"
 
 STROKE_CREATE = "_onerehab-api/_api/Assessment/stroke/create"

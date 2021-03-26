@@ -355,6 +355,7 @@ def create_draft_eq5d(details={}, custom_dict={}, caresetting_date_assessed = ''
         custom_dict["careSettingId"] = caresetting_id
         custom_dict["assessmentId"] = assessment_id
         dict = custom_dict
+    
     return dict
 
 def create_draft_fim(details={}, custom_dict={}, caresetting_date_assessed = '', caresetting_id='', status='Draft', assessment_id=None, type='A', assessed_by=None):
@@ -399,7 +400,6 @@ def create_draft_fim(details={}, custom_dict={}, caresetting_date_assessed = '',
             locomotion = locomotion_both
         stairs = random.choice(["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN"])
 
-        print(locomotion)
         motor_sub_score =   score_dict[eating] + \
                             score_dict[grooming] + \
                             score_dict[fimbathing] + \
@@ -480,6 +480,87 @@ def create_draft_fim(details={}, custom_dict={}, caresetting_date_assessed = '',
         dict = custom_dict
 
     return dict
+
+def create_draft_mbi(details={}, custom_dict={}, caresetting_date_assessed = '', caresetting_id='', status='Draft', assessment_id=None, type='A', assessed_by=None):
+    if not custom_dict:
+        score_dict =    {
+                            "ZERO": 0,
+                            "ONE": 1,
+                            "TWO": 2,
+                            "THREE": 3,
+                            "FOUR": 4,
+                            "FIVE": 5,
+                            "EIGHT": 8,
+                            "TEN": 10,
+                            "TWELVE": 12,
+                            "FIFTEEN": 15
+                        }
+
+        chair_bed_transfers = random.choice(["ZERO", "THREE", "EIGHT", "TWELVE", "FIFTEEN"]) 
+        ambulation = random.choice(["ZERO", "THREE", "EIGHT", "TWELVE", "FIFTEEN"]) 
+        if ambulation == "ZERO":
+            wheelchair = random.choice(["ZERO", "ONE", "THREE", "FOUR", "FIVE"]) 
+        else:
+             wheelchair = ""
+        stair_climbing = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        toilet_transfers = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        bowel_control = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        bladder_control = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        mbibathing = random.choice(["ZERO", "ONE", "THREE", "FOUR", "FIVE"]) 
+        dressing = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        personal_hygiene_grooming = random.choice(["ZERO", "ONE", "THREE", "FOUR", "FIVE"]) 
+        feeding = random.choice(["ZERO", "TWO", "FIVE", "EIGHT", "TEN"]) 
+        bathing = mbibathing
+        form_version = "V1"
+
+        total_mbi_score =   score_dict[chair_bed_transfers] + \
+                            score_dict[ambulation] + \
+                            score_dict[stair_climbing] + \
+                            score_dict[toilet_transfers] + \
+                            score_dict[bowel_control] + \
+                            score_dict[bladder_control] + \
+                            score_dict[mbibathing] + \
+                            score_dict[dressing] + \
+                            score_dict[personal_hygiene_grooming] + \
+                            score_dict[feeding]
+        
+        if not wheelchair == "":
+            total_mbi_score += score_dict[wheelchair]
+        
+        dict = {
+                "dateAssessed": caresetting_date_assessed,
+                "chairBedTransfers": chair_bed_transfers,
+                "ambulation": ambulation,
+                "wheelchair": wheelchair,
+                "stairClimbing": stair_climbing,
+                "toiletTransfers": toilet_transfers,
+                "bowelControl": bowel_control,
+                "bladderControl": bladder_control,
+                "mbibathing": mbibathing,
+                "dressing": dressing,
+                "personalHygieneGrooming": personal_hygiene_grooming,
+                "feeding": feeding,
+                "totalMbiScore": total_mbi_score,
+                "careSettingId": caresetting_id,
+                "formVersion": "V1",
+                "assessmentType": type,
+                "assessmentFormStatus": status,
+                "bathing": bathing,
+                "totalScore": total_mbi_score,
+                "assessmentId": assessment_id,
+                "organizationCenter": details["orgCenterResponseCode"]
+        }
+
+        if not assessed_by==None:
+            dict['assessedby'] = assessed_by
+    else:
+        custom_dict["organizationCenter"] = details["orgCenterResponseCode"]
+        custom_dict["careSettingId"] = caresetting_id
+        custom_dict["assessmentId"] = assessment_id
+        dict = custom_dict
+    print(dict)
+    return dict
+
 
 def generate_string(num_char=255):
     string = ''
@@ -648,7 +729,6 @@ def eq5d_flow(custom_dict={}, caresetting_date_assessed='', caresetting_id='', t
                         assessed_by = assessed_by
                     )
                 )
-    
     assert response.status_code == 200
     return response
 
@@ -676,6 +756,36 @@ def fim_flow(custom_dict={}, caresetting_date_assessed='', caresetting_id='', ty
                         assessed_by = assessed_by
                     )
                 )
+    
+    assert response.status_code == 200
+    return response
+
+def mbi_flow(custom_dict={}, caresetting_date_assessed='', caresetting_id='', type='A', assessment_id=None, assessed_by=None, is_draft=True):
+    if is_draft:
+        API_URL = "{}/{}".format(login.API_URL,url_ext.MBI_DRAFT)
+        status = 'Draft'
+    else:
+        API_URL = "{}/{}".format(login.API_URL,url_ext.MBI_CREATE)
+        status = 'Submit'
+
+    client = ServerApi(api_url=API_URL)
+
+    details = get_details_after_login(login.EMAIL,login.DOMAIN)
+
+    response = client.post_with_bearer_token(
+                    create_draft_mbi(
+                        details = details, 
+                        custom_dict = custom_dict, 
+                        caresetting_date_assessed = caresetting_date_assessed, 
+                        caresetting_id = caresetting_id, 
+                        status = status,
+                        assessment_id = assessment_id,
+                        type = type,
+                        assessed_by = assessed_by
+                    )
+                )
+    
+    print(response.json())
     
     assert response.status_code == 200
     return response
@@ -788,7 +898,28 @@ def assert_fim(response_admission=[], response_assessment=[]):
     assert response_admission['careSettingId'] == response_assessment['questionAnswers'][38]['answer']
     assert response_admission['id'] == response_assessment['questionAnswers'][39]['answer']
 
-# create_draft_eq5d(details={}, custom_dict={}, caresetting_date_assessed = '', caresetting_id='', status='Draft', type='A')
+def assert_mbi(response_admission=[], response_assessment=[]):
+    assert response_admission['assessmentId'] == response_assessment['questionAnswers'][0]['answer']
+    assert response_admission['formVersion'] == response_assessment['questionAnswers'][1]['answer']
+    assert response_admission['assessmentType'] == response_assessment['questionAnswers'][3]['answer']
+    assert response_admission['assessmentFormStatus'] == response_assessment['questionAnswers'][4]['answer']
+    assert response_admission['assessedby'] == response_assessment['questionAnswers'][5]['answer']
+    assert response_admission['chairBedTransfers'] == response_assessment['questionAnswers'][6]['answer']
+    assert response_admission['ambulation'] == response_assessment['questionAnswers'][7]['answer']
+    if response_admission['ambulation'] == "Zero":
+        assert response_admission['wheelchair'] == response_assessment['questionAnswers'][8]['answer']
+    assert response_admission['stairClimbing'] == response_assessment['questionAnswers'][9]['answer']
+    assert response_admission['toiletTransfers'] == response_assessment['questionAnswers'][10]['answer']
+    assert response_admission['bowelControl'] == response_assessment['questionAnswers'][11]['answer']
+    assert response_admission['bladderControl'] == response_assessment['questionAnswers'][12]['answer']
+    assert response_admission['bathing'] == response_assessment['questionAnswers'][13]['answer']
+    assert response_admission['dressing'] == response_assessment['questionAnswers'][14]['answer']
+    assert response_admission['personalHygieneGrooming'] == response_assessment['questionAnswers'][15]['answer']
+    assert response_admission['feeding'] == response_assessment['questionAnswers'][16]['answer']
+    assert response_admission['totalScore'] == response_assessment['questionAnswers'][17]['answer']
+    assert 'False' == response_assessment['questionAnswers'][20]['answer']
+    assert response_admission['careSettingId'] == response_assessment['questionAnswers'][23]['answer']
+    assert response_admission['id'] == response_assessment['questionAnswers'][24]['answer']
 
 
 
